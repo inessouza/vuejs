@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+        <p>{{ msg }}</p>
+        <p>{{ verdade ? 'Verdade' : 'Falso' }}</p>
+        <p>{{ frutas[0] + ' , ' + frutas[1] }}</p>
+        <p>Aluna: {{ aluno.nome }}</p>
+        <p> {{1 + num1}}</p>
+        <p>{{ fun() }}</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        new Vue({
+        el: '#app',
+        data: {
+            msg: 'Teste de Mensagem',
+            verdade: false, 
+            frutas: ['Pera', 'Uva', 'Maçã'],
+            aluno: { nome: 'Joana'},
+            num1: 1,
+            fun: () => {
+                return 'Mensagem da Função'
+            }
+        }   
+    })    
+    </script>    
+</body>
+</html>
