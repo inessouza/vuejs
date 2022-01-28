@@ -8,13 +8,13 @@
 </head>
 <body>
     <div id="app">
-        <input type="text" v-model="textDigitado" />
-        <br>
-        <div @click="alterarNome()">
-            Chamar Altera Nome
-        </div>
-        <br>
-        <label v-text="textDigitado"></label>
+        <form v-on:submit.prevent="alterarNome('Souza')">
+            <input type="text" v-model="textDigitado" />
+
+            <button type="submit">
+                Add
+            </button>
+        </form>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script>
@@ -24,8 +24,8 @@
             textDigitado: "",
         },
         methods: {
-            alterarNome() {
-                this.textDigitado = "Souza"
+            alterarNome(sobrenome, event) {
+                this.textDigitado = sobrenome
             }
         }
     })    
