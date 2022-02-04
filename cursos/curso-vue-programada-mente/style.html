@@ -13,6 +13,7 @@
 
         <ul>
             <li v-for="item in array"
+            style="background: red;"
             @click="alert($event.target.textContent.trim())">
                 {{ item }}
             </li>
@@ -32,7 +33,11 @@
                 this.textDigitado = ''
             },
             alert(event) {
-                event.target.style = "background: red"
+                element = event.target
+                if (element.style.background == 'red')
+                event.target.style = "background: black"
+            else
+                event.target.style = "background: white"
             }
         }
     })    
